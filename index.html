@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iman Aghahakim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #b84c3a; /* brick red accent */
+      --text-color: #222;
+      --bg-color: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .paper-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      margin-top: 3rem;
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .lang-toggle {
+      border: none;
+      background: none;
+      color: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Iman Aghahakim</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#papers">Papers</a>
+      <a href="#contact">Contact</a>
+      <button class="lang-toggle" onclick="toggleLang()">FA / EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>Hello! I’m Iman Aghahakim, currently pursuing studies in Economics and Philosophy. My research interests include practical reasoning, ethics, and decision theory. This site collects my papers and writings.</p>
+    </section>
+
+    <section id="papers">
+      <h2>Papers & Articles</h2>
+      <ul class="paper-list">
+        <li><strong>Moorean Promises and the Knowledge Norm of Promising</strong> (2025) – <a href="#">PDF</a></li>
+        <li><strong>Deliberation and Exclusionary Reasons</strong> (2024) – <a href="#">PDF</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:iman@example.com">iman@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Iman Aghahakim. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      alert('Language toggle feature coming soon!');
+    }
+  </script>
+</body>
+</html>
