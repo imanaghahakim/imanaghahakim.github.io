@@ -3,52 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Thought | Iman Aghahakim</title>
+  <title>Welcome | Iman Aghahakim</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      margin:0;
+      padding:0;
+      font-family: 'Times New Roman', Times, serif;
       background-color: #000000;
       color: #ffffff;
-      font-family: 'Times New Roman', Times, serif;
-      display: flex;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .container {
+      text-align:center;
+      display:flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      min-height: 100vh;
     }
-    header {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 2rem;
-      font-weight: bold;
+    .intro {
+      font-size:1.2rem;
+      color:#ffffff;
+      margin-bottom:2rem;
+      max-width: 600px;
     }
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      width: 80%;
-      max-width: 800px;
-      margin-top: 3rem;
+    .lang-btn {
+      padding:1rem 2rem;
+      font-size:1.5rem;
+      border:none;
+      background:none;
+      color:#ffffff;
+      cursor:pointer;
     }
-    .section {
-      border: 1px solid #444;
-      padding: 2rem;
-      border-radius: 8px;
-      min-height: 150px;
-      transition: border-color 0.3s;
-    }
-    .section:hover {
-      border-color: #888;
+    .lang-btn:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>My Thought</header>
-
-  <div class="content">
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
+  <div class="container">
+    <span class="intro">hi, I'm Iman Aghahakim and i write my brain storming thought here. usually about philosophy</span>
+    <button class="lang-btn" onclick="location.href='en.html'">English</button>
   </div>
 </body>
 </html>
