@@ -3,49 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome | Iman Aghahakim</title>
+  <title>My Thought | Iman Aghahakim</title>
   <style>
     body {
-      margin:0;
-      padding:0;
-      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
       background-color: #000000;
       color: #ffffff;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .container {
-      text-align:center;
-      display:flex;
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      min-height: 100vh;
     }
-    .intro {
-      font-size:1.2rem;
-      color:#ffffff;
-      margin-bottom:2rem;
-      max-width: 600px;
+    header {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 2rem;
+      font-weight: bold;
     }
-    .lang-btn {
-      padding:1rem 2rem;
-      font-size:1.5rem;
-      border:none;
-      background:none;
-      color:#ffffff;
-      cursor:pointer;
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 80%;
+      max-width: 800px;
+      margin-top: 3rem;
     }
-    .lang-btn:hover {
-      text-decoration: underline;
+    .section {
+      border: 1px solid #444;
+      padding: 2rem;
+      border-radius: 8px;
+      min-height: 150px;
+      transition: border-color 0.3s;
+    }
+    .section:hover {
+      border-color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <span class="intro">Hi, I'm Iman Aghahakim, and this is where I explore my ideas and reflections, mostly with philosophical approach. </span>
-    <button class="lang-btn" onclick="location.href='en.html'">English</button>
+  <header>My Thought</header>
+
+  <div class="content">
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
   </div>
 </body>
 </html>
