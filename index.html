@@ -6,39 +6,49 @@
   <title>Welcome | Iman Aghahakim</title>
   <style>
     body {
-      margin:0;
-      padding:0;
+      margin: 0;
+      padding: 0;
       font-family: 'Times New Roman', Times, serif;
-      background-color: #000000;
-      color: #ffffff;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .container {
-      text-align:center;
-      display:flex;
-      flex-direction: column;
+      background-image: url('ooo-1160x773.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
       justify-content: center;
       align-items: center;
     }
+    .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+      padding: 3rem;
+      border-radius: 4px;
+      max-width: 700px;
+      width: 80%;
+      box-sizing: border-box;
+    }
     .intro {
-      font-size:1.2rem;
-      color:#ffffff;
-      margin-bottom:2rem;
-      max-width: 600px;
+      font-size: 1.8rem; /* Increased size to match the image layout */
+      line-height: 1.4;
+      color: #ffffff;
+      margin-bottom: 2rem;
     }
     .lang-btn {
-      padding:1rem 2rem;
-      font-size:1.5rem;
-      border:none;
-      background:none;
-      color:#ffffff;
-      cursor:pointer;
+      padding: 0.5rem 1rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.8rem; /* Matches the intro text size */
+      border: none;
+      background: none;
+      color: #ffffff;
+      cursor: pointer;
+      text-decoration: underline; /* Default underline to match the image layout */
     }
     .lang-btn:hover {
-      text-decoration: underline;
+      opacity: 0.8;
     }
   </style>
 </head>
