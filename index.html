@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Times New Roman', Times, serif;
-      background-image: url('ooo-1160x773.png'); /* Updated to .png */
+      background-image: url('ooo-1160x773.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -17,7 +17,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #000000; /* Fallback color while image loads */
+      background-color: #000000;
     }
     .container {
       text-align: center;
@@ -25,18 +25,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
-      padding: 3rem;
-      border-radius: 4px;
       max-width: 700px;
       width: 80%;
       box-sizing: border-box;
+      /* Removed background-color, padding, and border-radius to leave text naked */
     }
     .intro {
       font-size: 1.8rem;
       line-height: 1.4;
       color: #ffffff;
       margin-bottom: 2rem;
+      /* Subtle shadow ensures text remains readable over light areas of the image */
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
     }
     .lang-btn {
       padding: 0.5rem 1rem;
@@ -47,6 +47,7 @@
       color: #ffffff;
       cursor: pointer;
       text-decoration: underline;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
     }
     .lang-btn:hover {
       opacity: 0.8;
@@ -55,7 +56,7 @@
 </head>
 <body>
   <div class="container">
-    <span class="intro">Hi, I'm Iman Aghahakim and I write my brain storming thought here. Usually about philosophy</span>
+    <span class="intro">Hi, I'm Iman Aghahakim, and I write my brain storming thought here. Usually about philosophy</span>
     <button class="lang-btn" onclick="location.href='en.html'">English</button>
   </div>
 </body>
