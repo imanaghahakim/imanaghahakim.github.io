@@ -43,18 +43,19 @@
     .home-btn {
       padding: 0.5rem 0;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 1.3rem; /* Slightly smaller than the main header for hierarchy */
+      font-size: 1.3rem; 
       border: none;
       background: none;
       color: #ffffff;
       cursor: pointer;
-      text-decoration: underline;
+      text-decoration: none; /* Removed the underline */
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), -1px -1px 4px rgba(0, 0, 0, 0.8);
       transition: opacity 0.2s;
     }
 
     .home-btn:hover {
       opacity: 0.8;
+      text-decoration: underline; /* Optional: This keeps it clean normally, but shows the underline when hovered */
     }
 
     header {
