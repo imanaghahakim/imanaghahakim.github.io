@@ -58,14 +58,26 @@
       font-size: 1.2rem;
       line-height: 1.7;
       color: #dddddd;
-      text-align: left; /* Snaps all regular text and principles strictly to the left edge */
+      text-align: left;
     }
 
-    /* Style for cleanly parsed text blocks */
+    /* All generated paragraphs and lines snap absolutely left */
     .article-content p {
       margin-top: 0;
       margin-bottom: 1.5rem;
-      text-indent: 0 !important; /* Absolute guard against indentation */
+      text-indent: 0 !important;
+      padding: 0;
+    }
+
+    /* Clean structural formatting for blocks like P1, P2, and Principles */
+    .block-line {
+      display: block;
+      margin-bottom: 0.5rem;
+      text-indent: 0 !important;
+    }
+    
+    .block-space {
+      height: 1rem;
     }
   </style>
 </head>
@@ -87,21 +99,36 @@
       })
       .then(text => {
         const target = document.getElementById('content-target');
-        target.innerHTML = ''; // Clear loading message
+        target.innerHTML = '';
 
-        // Automatically splits your text into chunks by line breaks,
-        // trims off any hidden formatting spaces from the left, and wraps them safely
-        text.split('\n').forEach(line => {
-          const trimmedLine = line.trim();
-          if (trimmedLine.length > 0) {
-            const p = document.createElement('p');
-            p.textContent = trimmedLine;
-            target.appendChild(p);
+        // Normalizes all line breaks and processes each block cleanly
+        const blocks = text.split(/\n/);
+
+        blocks.forEach(line => {
+          let trimmed = line.trim();
+          if (trimmed.length === 0) {
+            const space = document.createElement('div');
+            space.className = 'block-space';
+            target.appendChild(space);
+            return;
+          }
+
+          // If a line contains consecutive items like P2 or C inline, 
+          // this separates them onto their own clean, non-indented lines
+          if (trimmed.includes('P2.') || trimmed.includes('C.')) {
+            // Split by specific markers safely without losing them
+            const subLines = trimmed.split(/(?=P2\.)|(?=C\.)/g);
+            subLines.forEach(sub => {
+              const span = document.createElement('span');
+              span.className = 'block-line';
+              span.textContent = sub.trim();
+              target.appendChild(span);
+            });
           } else {
-            // Adds empty vertical spacing for paragraph breaks
-            const br = document.createElement('div');
-            br.style.height = '1rem';
-            target.appendChild(br);
+            // Normal paragraph or principle line mapping
+            const p = document.createElement('p');
+            p.textContent = trimmed;
+            target.appendChild(p);
           }
         });
       })
