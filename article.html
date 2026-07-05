@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View Article | Iman Aghahakim</title>
-  <!-- Load the robust PDF.js rendering engine from a secure public network -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -15,12 +13,12 @@
       background-position: center;
       background-attachment: fixed;
       background-repeat: no-repeat;
+      color: #ffffff;
       font-family: 'Times New Roman', Times, serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      color: #ffffff;
     }
 
     body::before {
@@ -30,15 +28,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.88);
+      background-color: rgba(0, 0, 0, 0.85);
       z-index: -1;
     }
 
     .nav-container {
-      width: 90%;
-      max-width: 850px;
+      width: 85%;
+      max-width: 750px;
       margin-top: 3rem;
-      margin-bottom: 2rem;
     }
 
     .back-link {
@@ -53,22 +50,22 @@
       text-decoration: underline;
     }
 
-    /* Container holding the dynamically generated text-page elements */
-    #pdf-viewer-container {
-      width: 90%;
-      max-width: 850px;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    .article-content {
+      width: 85%;
+      max-width: 750px;
+      margin-top: 2rem;
       margin-bottom: 6rem;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #dddddd;
+      text-align: left; /* Snaps all regular text and principles strictly to the left edge */
     }
 
-    /* Styles each page cleanly over your dark canvas without any indents */
-    canvas {
-      width: 100% !important;
-      height: auto !important;
-      border-radius: 4px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    /* Style for cleanly parsed text blocks */
+    .article-content p {
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-indent: 0 !important; /* Absolute guard against indentation */
     }
   </style>
 </head>
@@ -78,46 +75,40 @@
     <a href="en.html" class="back-link">← Back to Thoughts</a>
   </div>
 
-  <!-- Your PDF file contents will cleanly render directly right here -->
-  <div id="pdf-viewer-container"></div>
+  <div id="content-target" class="article-content">Loading essay...</div>
 
   <script>
-    // ==========================================
-    // 💡 THE TEMPLATE SWITCH:
-    // Change this single filename to show any other article PDF you upload!
-    // ==========================================
-    const pdfFilename = 'Promising as an Epistemic Practice.pdf';
+    const textSourceFile = 'Promising_as_an_Epistemic_Practice.txt';
 
-    // Point the engine script to its internal worker asset
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+    fetch(textSourceFile)
+      .then(response => {
+        if (!response.ok) throw new Error('File not found');
+        return response.text();
+      })
+      .then(text => {
+        const target = document.getElementById('content-target');
+        target.innerHTML = ''; // Clear loading message
 
-    const container = document.getElementById('pdf-viewer-container');
-
-    // Fetch the target document file from your repo assets
-    pdfjsLib.getDocument(pdfFilename).promise.then(pdf => {
-      // Intelligently loops through your paper sequentially, page by page
-      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-        pdf.getPage(pageNum).then(page => {
-          const canvas = document.createElement('canvas');
-          container.appendChild(canvas);
-
-          const context = canvas.getContext('2d');
-          const viewport = page.getViewport({ scale: 2.0 }); // High-fidelity scale generation
-
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
-
-          const renderContext = {
-            canvasContext: context,
-            viewport: viewport
-          };
-          page.render(renderContext);
+        // Automatically splits your text into chunks by line breaks,
+        // trims off any hidden formatting spaces from the left, and wraps them safely
+        text.split('\n').forEach(line => {
+          const trimmedLine = line.trim();
+          if (trimmedLine.length > 0) {
+            const p = document.createElement('p');
+            p.textContent = trimmedLine;
+            target.appendChild(p);
+          } else {
+            // Adds empty vertical spacing for paragraph breaks
+            const br = document.createElement('div');
+            br.style.height = '1rem';
+            target.appendChild(br);
+          }
         });
-      }
-    }).catch(error => {
-      console.error('Error rendering PDF text streams: ', error);
-      container.innerHTML = `<p style="color: #ff6b6b; text-align: center;">Unable to securely stream paper content layout asset.</p>`;
-    });
+      })
+      .catch(err => {
+        document.getElementById('content-target').innerHTML = 
+          `<p style="color: #ff6b6b;">Error loading the essay file. Make sure ${textSourceFile} exists in your repository.</p>`;
+      });
   </script>
 
 </body>
