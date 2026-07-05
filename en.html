@@ -8,7 +8,12 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000000;
+      /* Using the same background image for continuity */
+      background-image: url('ooo-1160x773.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Keeps background stable while scrolling */
+      background-repeat: no-repeat;
       color: #ffffff;
       font-family: 'Times New Roman', Times, serif;
       display: flex;
@@ -17,42 +22,76 @@
       min-height: 100vh;
     }
 
+    /* An overlay to slightly darken the image so your essays are highly readable */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75); 
+      z-index: -1;
+    }
+
     header {
       text-align: center;
-      margin-top: 3rem;
-      font-size: 2rem;
+      margin-top: 4rem;
+      font-size: 2.5rem;
       font-weight: bold;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     }
 
     .content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      width: 80%;
-      max-width: 800px;
-      margin-top: 3rem;
+      gap: 3rem;
+      width: 85%;
+      max-width: 750px;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
     }
 
-    .section {
-      border: 1px solid #444;
-      padding: 2rem;
-      border-radius: 8px;
-      min-height: 150px;
-      transition: border-color 0.3s;
+    /* Custom style for your future essays instead of the blank boxes */
+    .essay-preview {
+      border-bottom: 1px solid #333;
+      padding-bottom: 2rem;
     }
 
-    .section:hover {
-      border-color: #888;
+    .essay-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .essay-date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .essay-excerpt {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
+
   <header>My Thought</header>
 
   <div class="content">
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
+    <!-- The blank boxes have been removed. 
+         Below is an example of how you can structure your first essay entry: -->
+    <div class="essay-preview">
+      <div class="essay-title">First Philosophical Reflection</div>
+      <div class="essay-date">July 2026</div>
+      <div class="essay-excerpt">
+        This is where your brainstorming thoughts and philosophical texts will go. The text sits beautifully over a darkened version of your home page canvas...
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
