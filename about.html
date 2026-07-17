@@ -28,13 +28,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.45); /* Lighter mask for an open, airy feel */
+      background-color: rgba(0, 0, 0, 0.45);
       z-index: -1;
     }
 
     .nav-container {
       width: 85%;
-      max-width: 950px; /* Expanded grid width for side-by-side layout */
+      max-width: 950px;
       margin-top: 3rem;
       display: flex;
       gap: 1.5rem;
@@ -55,7 +55,6 @@
       text-decoration: underline;
     }
 
-    /* Split Grid Structure */
     .about-grid {
       display: flex;
       gap: 4rem;
@@ -65,7 +64,6 @@
       margin-bottom: 6rem;
     }
 
-    /* Left Column: Fixed Profile Info */
     .sidebar {
       flex: 1;
       max-width: 280px;
@@ -102,7 +100,6 @@
       text-decoration: underline;
     }
 
-    /* Right Column: Main CV Flow */
     .main-flow {
       flex: 2;
     }
@@ -126,7 +123,6 @@
       padding-bottom: 0.3rem;
     }
 
-    /* Elegant Timeline Effect */
     .timeline {
       border-left: 1px solid #555;
       padding-left: 1.5rem;
@@ -138,7 +134,6 @@
       margin-bottom: 2rem;
     }
 
-    /* Small node dots on the timeline line */
     .timeline-item::before {
       content: "";
       position: absolute;
@@ -175,11 +170,10 @@
       line-height: 1.5;
     }
 
-    /* Simple Grid for Advanced Classes */
     .coursework-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 1.5rem 1rem;
       font-size: 1.1rem;
       color: #ddd;
     }
@@ -193,6 +187,14 @@
       display: block;
       font-size: 0.95rem;
       color: #777;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      color: #ddd;
     }
 
     @media (max-width: 768px) {
@@ -211,16 +213,15 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <div class="nav-container">
     <a href="index.html" class="nav-link">Home</a>
     <a href="en.html" class="nav-link">Thoughts</a>
-    <a href="about.html" class="nav-link active">About</a>
+    <a href="about.html" class="nav-link active">About Me</a>
   </div>
 
   <div class="about-grid">
     
-    <!-- LEFT PANEL: Identity & Core Details -->
+    <!-- LEFT PANEL -->
     <div class="sidebar">
       <h1>Iman Aghahakim</h1>
       <div class="subtitle">Economics & Philosophy<br>University of Tehran</div>
@@ -232,75 +233,96 @@
       </div>
     </div>
 
-    <!-- RIGHT PANEL: Fluid Academic Content -->
+    <!-- RIGHT PANEL -->
     <div class="main-flow">
       
       <div class="bio-text">
-        I am an undergraduate researcher pursuing an integrated trajectory spanning analytical economics and foundational philosophy[cite: 2]. My primary investigations focus within moral and political philosophy, applied ethics, and the philosophy of action—focusing closely on practical/theoretical reasoning models, deliberation constraints, and the structural dynamics of reasons and oughts[cite: 2].
+        I am an undergraduate researcher at the University of Tehran pursuing a trajectory spanning analytical economics and foundational philosophy. My primary investigations focus within moral and political philosophy, applied ethics, and the philosophy of action—focusing closely on practical and theoretical reasoning, deliberation, and the structural dynamics of reasons and oughts.
       </div>
 
       <div class="bio-text">
-        Presently, I am carrying out independent research supervised by Professor Amir Saemi at the Institute for Research in Fundamental Sciences (IPM), examining epistemic updates within promising structures to refine contemporary boundary critiques of epistemic obligations[cite: 2].
+        Presently, I am carrying out independent research supervised by Professor Amir Saemi at the Institute for Research in Fundamental Sciences (IPM), examining whether promising places the promisor in a better epistemic position to know that she will do what she promised.
       </div>
 
       <h2>Education</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="item-year">2021 — 2026 (Expected)</div>
+          <div class="item-year">Sep 2021 — June 2026 (Expected)</div>
           <div class="item-title">Bachelor of Economics (Major)</div>
           <div class="item-institution">University of Tehran</div>
-          <div class="item-details">GPA: 16.33/20. Core Focus: Ethical Economics, Game Theory, Economic Development, Public Sector[cite: 2].</div>
+          <div class="item-details">GPA: 16.33/20. Relevant Courses: Ethical Economics, Game Theory and Its Application, Economic Development, Public Sector 1&2.</div>
         </div>
         
         <div class="timeline-item">
           <div class="item-year">Ongoing Track</div>
-          <div class="item-title">Minor Track in Philosophy</div>
+          <div class="item-title">Minor in Philosophy</div>
           <div class="item-institution">University of Tehran</div>
-          <div class="item-details">GPA: 14.89/20. Core Focus: Western Philosophy of Ethics, Kant & German Idealism, Phenomenology, Postmodernism, Philosophy of Arts[cite: 2].</div>
+          <div class="item-details">GPA: 14.89/20. Relevant Courses: Philosophy of Ethics in Western Thought, Kant and German Idealism, Phenomenology and Existential Philosophy, Postmodern Philosophy, Philosophy of Arts.</div>
         </div>
       </div>
 
-      <h2>Research Collaborations & Groups</h2>
+      <h2>Research & Academic Activities</h2>
       <div class="timeline">
         <div class="timeline-item">
-          <div class="item-year">Ongoing Research Collaboration</div>
-          <div class="item-title">Independent Project on Epistemic Obligations</div>
+          <div class="item-year">Independent Ongoing Research</div>
+          <div class="item-title">Epistemic Positions and Promising Structures</div>
           <div class="item-institution">Institute for Research in Fundamental Sciences (IPM)</div>
-          <div class="item-details">Co-researching with Amir Saemi. Formulating an experimental boundary counter-argument to contemporary epistemic norm assertions concerning Moorean commitments[cite: 2].</div>
+          <div class="item-details">Collaborating with Amir Saemi. Developing a critical framework assessing the knowledge norm of promising and its boundary applications under contemporary preprint formulations.</div>
         </div>
 
         <div class="timeline-item">
           <div class="item-year">1.5 Years Active Engagement</div>
           <div class="item-title">Moral Philosophy Reading Group</div>
           <div class="item-institution">IPM — Led by Amir Saemi</div>
-          <div class="item-details">Critical seminar tracking analytical responsibility criteria and normative accountability matrices[cite: 2].</div>
+          <div class="item-details">Rigorous evaluations dealing with criteria of normative ethical frameworks and responsibility.</div>
         </div>
 
         <div class="timeline-item">
           <div class="item-year">8 Months Active Engagement</div>
           <div class="item-title">Philosophy of Language Reading Group</div>
           <div class="item-institution">IPM — Led by Sajed Tayebi</div>
-          <div class="item-details">Rigorous evaluations dealing with intentionality, speech-act variances, and verification mechanics[cite: 2].</div>
+          <div class="item-details">Evaluating intentionality frameworks, speech-act variations, and structural semantics.</div>
         </div>
       </div>
 
-      <h2>Advanced Seminars & Masterclasses</h2>
+      <h2>Advanced Coursework & Workshops</h2>
       <div class="coursework-list">
         <div class="course-item">
           <strong>Ethics & Complicity</strong>
-          <span class="course-prof">Prof. Amir Saemi (IPM)</span>[cite: 2]
+          <span class="course-prof">Amir Saemi (IPM)</span>
         </div>
         <div class="course-item">
           <strong>Epistemology & Doing Philosophy</strong>
-          <span class="course-prof">Prof. Mohsen Zamani (IPM)</span>[cite: 2]
+          <span class="course-prof">Mohsen Zamani (IPM)</span>
         </div>
         <div class="course-item">
-          <strong>Analytic Philosophy & Social Epistemology</strong>
-          <span class="course-prof">Prof. Sajed Tayebi (IPM)</span>[cite: 2]
+          <strong>Analytic Philosophy & Epistemology of Social Movements</strong>
+          <span class="course-prof">Sajed Tayebi (IPM)</span>
         </div>
         <div class="course-item">
           <strong>Metaphysics</strong>
-          <span class="course-prof">Prof. Mahmood Morvarid (IPM)</span>[cite: 2]
+          <span class="course-prof">Mahmood Morvarid (IPM)</span>
+        </div>
+        <div class="course-item">
+          <strong>Ethics of Artificial Intelligence</strong>
+          <span class="course-prof">Hadi Safaei</span>
+        </div>
+        <div class="course-item">
+          <strong>Summer School Track</strong>
+          <span class="course-prof">Paul Grice: Meaning, Intention and Perception (IPM)</span>
+        </div>
+      </div>
+
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div style="border-left: 2px solid #555; padding-left: 0.8rem; margin-bottom: 0.4rem;">
+          • Academic writing in philosophy & argument reconstruction
+        </div>
+        <div style="border-left: 2px solid #555; padding-left: 0.8rem; margin-bottom: 0.4rem;">
+          • Independent research, literature review, and critical analysis
+        </div>
+        <div style="border-left: 2px solid #555; padding-left: 0.8rem;">
+          • Seminar engagement and structural dialogue evaluation
         </div>
       </div>
 
