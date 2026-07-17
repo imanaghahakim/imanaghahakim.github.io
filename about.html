@@ -28,13 +28,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.45); /* Lighter mask for an open, airy feel */
       z-index: -1;
     }
 
     .nav-container {
       width: 85%;
-      max-width: 750px;
+      max-width: 950px; /* Expanded grid width for side-by-side layout */
       margin-top: 3rem;
       display: flex;
       gap: 1.5rem;
@@ -42,13 +42,12 @@
     }
 
     .nav-link {
-      font-family: 'Times New Roman', Times, serif;
       font-size: 1.3rem; 
       color: #aaa;
       cursor: pointer;
       text-decoration: none;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-      transition: color 0.2s, opacity 0.2s;
+      transition: color 0.2s;
     }
 
     .nav-link:hover, .nav-link.active {
@@ -56,129 +55,256 @@
       text-decoration: underline;
     }
 
-    .about-content {
+    /* Split Grid Structure */
+    .about-grid {
+      display: flex;
+      gap: 4rem;
       width: 85%;
-      max-width: 750px;
+      max-width: 950px;
       margin-top: 4rem;
       margin-bottom: 6rem;
     }
 
-    h1 {
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin-bottom: 0.2rem;
-      text-align: left;
+    /* Left Column: Fixed Profile Info */
+    .sidebar {
+      flex: 1;
+      max-width: 280px;
     }
 
-    .affiliation {
-      font-size: 1.2rem;
+    h1 {
+      font-size: 2.6rem;
+      line-height: 1.1;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
       color: #aaa;
       font-style: italic;
-      margin-bottom: 3rem;
-      text-align: left;
+      line-height: 1.4;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      color: #ccc;
+      line-height: 1.6;
+      border-top: 1px solid #444;
+      padding-top: 1.5rem;
+    }
+
+    .contact-info a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Right Column: Main CV Flow */
+    .main-flow {
+      flex: 2;
+    }
+
+    .bio-text {
+      font-size: 1.25rem;
+      line-height: 1.65;
+      color: #eeeeee;
+      text-align: justify;
+      margin-bottom: 2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       margin-top: 3rem;
-      margin-bottom: 1.2rem;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.5rem;
-      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      color: #aaa;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.3rem;
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #dddddd;
-      text-align: justify;
-      margin-bottom: 1.5rem;
-      text-indent: 0 !important;
+    /* Elegant Timeline Effect */
+    .timeline {
+      border-left: 1px solid #555;
+      padding-left: 1.5rem;
+      margin-left: 0.2rem;
     }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-bottom: 1.5rem;
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
     }
 
-    li {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #dddddd;
-      margin-bottom: 0.6rem;
-      text-align: justify;
+    /* Small node dots on the timeline line */
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: calc(-1.5rem - 4px);
+      top: 0.5rem;
+      width: 7px;
+      height: 7px;
+      background: #888;
+      border-radius: 50%;
+    }
+
+    .item-year {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 0.2rem;
     }
 
     .item-title {
+      font-size: 1.2rem;
       font-weight: bold;
       color: #ffffff;
     }
 
-    .item-meta {
-      color: #aaa;
+    .item-institution {
+      font-size: 1.1rem;
+      color: #ccc;
       font-style: italic;
+    }
+
+    .item-details {
+      font-size: 1.05rem;
+      color: #aaa;
+      margin-top: 0.3rem;
+      line-height: 1.5;
+    }
+
+    /* Simple Grid for Advanced Classes */
+    .coursework-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .course-item {
+      border-left: 2px solid #444;
+      padding-left: 0.8rem;
+    }
+
+    .course-prof {
+      display: block;
+      font-size: 0.95rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .sidebar {
+        max-width: 100%;
+      }
+      .coursework-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Symmetric Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="nav-container">
     <a href="index.html" class="nav-link">Home</a>
     <a href="en.html" class="nav-link">Thoughts</a>
     <a href="about.html" class="nav-link active">About</a>
   </div>
 
-  <div class="about-content">
-    <h1>Iman Aghahakim</h1>
-    <div class="affiliation">University of Tehran & Institute for Research in Fundamental Sciences (IPM)</div>
+  <div class="about-grid">
+    
+    <!-- LEFT PANEL: Identity & Core Details -->
+    <div class="sidebar">
+      <h1>Iman Aghahakim</h1>
+      <div class="subtitle">Economics & Philosophy<br>University of Tehran</div>
+      
+      <div class="contact-info">
+        <strong>Location:</strong> Tehran, Iran<br>
+        <strong>Email:</strong> <a href="mailto:iman.aghahakim02@gmail.com">iman.aghahakim02@gmail.com</a><br>
+        <strong>Phone:</strong> +98 935 103 2528
+      </div>
+    </div>
 
-    <h2>Biography & Research Interests</h2>
-    <p>
-      I am a student at the University of Tehran finishing a Bachelor's degree in Economics alongside a minor track in Philosophy[cite: 1]. My academic research centers primarily within moral and political philosophy, applied ethics, and the philosophy of action[cite: 1]. More specifically, my interests focus on practical and theoretical reasoning, moral reasons, the architecture of reasons and oughts, deliberation, and rationality[cite: 1].
-    </p>
-    <p>
-      Currently, I am conducting independent research in collaboration with Professor Amir Saemi at the Institute for Research in Fundamental Sciences (IPM)[cite: 1]. Our work investigates whether the act of promising inherently updates a promisor's epistemic status, developing a critique against contemporary accounts of the knowledge norm of promising[cite: 1].
-    </p>
+    <!-- RIGHT PANEL: Fluid Academic Content -->
+    <div class="main-flow">
+      
+      <div class="bio-text">
+        I am an undergraduate researcher pursuing an integrated trajectory spanning analytical economics and foundational philosophy[cite: 2]. My primary investigations focus within moral and political philosophy, applied ethics, and the philosophy of action—focusing closely on practical/theoretical reasoning models, deliberation constraints, and the structural dynamics of reasons and oughts[cite: 2].
+      </div>
 
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <span class="item-title">B.S. in Economics</span> — <span class="item-meta">University of Tehran</span> (Expected June 2026)[cite: 1]<br>
-        Relevant coursework: Ethical Economics, Game Theory, Economic Development, Public Sector[cite: 1]
-      </li>
-      <li style="margin-top: 1rem;">
-        <span class="item-title">Minor in Philosophy</span> — <span class="item-meta">University of Tehran</span> (Ongoing)[cite: 1]<br>
-        Relevant coursework: Western Philosophy of Ethics, Kant & German Idealism, Phenomenology & Existential Philosophy, Postmodern Philosophy, Philosophy of Arts[cite: 1]
-      </li>
-    </ul>
+      <div class="bio-text">
+        Presently, I am carrying out independent research supervised by Professor Amir Saemi at the Institute for Research in Fundamental Sciences (IPM), examining epistemic updates within promising structures to refine contemporary boundary critiques of epistemic obligations[cite: 2].
+      </div>
 
-    <h2>Academic Engagement & Activities</h2>
-    <ul>
-      <li>
-        <span class="item-title">Moral Philosophy Reading Group</span> — <span class="item-meta">IPM (Led by Amir Saemi)</span><br>
-        Active participant evaluating core problems in normative ethics and responsibility (1.5 years)[cite: 1].
-      </li>
-      <li style="margin-top: 1rem;">
-        <span class="item-title">Philosophy of Language Reading Group</span> — <span class="item-meta">IPM (Led by Sajed Tayebi)</span><br>
-        Active participant specializing in semantics, meaning, and speech act theory (8 months)[cite: 1].
-      </li>
-    </ul>
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-year">2021 — 2026 (Expected)</div>
+          <div class="item-title">Bachelor of Economics (Major)</div>
+          <div class="item-institution">University of Tehran</div>
+          <div class="item-details">GPA: 16.33/20. Core Focus: Ethical Economics, Game Theory, Economic Development, Public Sector[cite: 2].</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="item-year">Ongoing Track</div>
+          <div class="item-title">Minor Track in Philosophy</div>
+          <div class="item-institution">University of Tehran</div>
+          <div class="item-details">GPA: 14.89/20. Core Focus: Western Philosophy of Ethics, Kant & German Idealism, Phenomenology, Postmodernism, Philosophy of Arts[cite: 2].</div>
+        </div>
+      </div>
 
-    <h2>Advanced Coursework & Workshops</h2>
-    <p style="font-size: 1.15rem; color: #ccc;">
-      In addition to my regular university tracks, I have completed specialized seminar series at the Institute for Research in Fundamental Sciences (IPM), including:
-    </p>
-    <ul style="padding-left: 1rem; list-style-type: serif;">
-      <li style="list-style: square; color: #aaa;"><span style="color: #ddd;">Ethics & Complicity (Prof. Amir Saemi)</span>[cite: 1]</li>
-      <li style="list-style: square; color: #aaa;"><span style="color: #ddd;">Epistemology & Doing Philosophy (Prof. Mohsen Zamani)</span>[cite: 1]</li>
-      <li style="list-style: square; color: #aaa;"><span style="color: #ddd;">Analytic Philosophy & Epistemology of Social Movements (Prof. Sajed Tayebi)</span>[cite: 1]</li>
-      <li style="list-style: square; color: #aaa;"><span style="color: #ddd;">Metaphysics (Prof. Mahmood Morvarid)</span>[cite: 1]</li>
-      <li style="list-style: square; color: #aaa;"><span style="color: #ddd;">Knowledge and Practical Considerations & Topics in Social Epistemology</span>[cite: 1]</li>
-    </ul>
+      <h2>Research Collaborations & Groups</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-year">Ongoing Research Collaboration</div>
+          <div class="item-title">Independent Project on Epistemic Obligations</div>
+          <div class="item-institution">Institute for Research in Fundamental Sciences (IPM)</div>
+          <div class="item-details">Co-researching with Amir Saemi. Formulating an experimental boundary counter-argument to contemporary epistemic norm assertions concerning Moorean commitments[cite: 2].</div>
+        </div>
 
+        <div class="timeline-item">
+          <div class="item-year">1.5 Years Active Engagement</div>
+          <div class="item-title">Moral Philosophy Reading Group</div>
+          <div class="item-institution">IPM — Led by Amir Saemi</div>
+          <div class="item-details">Critical seminar tracking analytical responsibility criteria and normative accountability matrices[cite: 2].</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-year">8 Months Active Engagement</div>
+          <div class="item-title">Philosophy of Language Reading Group</div>
+          <div class="item-institution">IPM — Led by Sajed Tayebi</div>
+          <div class="item-details">Rigorous evaluations dealing with intentionality, speech-act variances, and verification mechanics[cite: 2].</div>
+        </div>
+      </div>
+
+      <h2>Advanced Seminars & Masterclasses</h2>
+      <div class="coursework-list">
+        <div class="course-item">
+          <strong>Ethics & Complicity</strong>
+          <span class="course-prof">Prof. Amir Saemi (IPM)</span>[cite: 2]
+        </div>
+        <div class="course-item">
+          <strong>Epistemology & Doing Philosophy</strong>
+          <span class="course-prof">Prof. Mohsen Zamani (IPM)</span>[cite: 2]
+        </div>
+        <div class="course-item">
+          <strong>Analytic Philosophy & Social Epistemology</strong>
+          <span class="course-prof">Prof. Sajed Tayebi (IPM)</span>[cite: 2]
+        </div>
+        <div class="course-item">
+          <strong>Metaphysics</strong>
+          <span class="course-prof">Prof. Mahmood Morvarid (IPM)</span>[cite: 2]
+        </div>
+      </div>
+
+    </div>
   </div>
 
 </body>
