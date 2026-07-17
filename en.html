@@ -59,7 +59,7 @@
     }
 
     header {
-      text-align: center;
+      text-align: center; /* Centers main page header */
       margin-top: 2rem;
       font-size: 2.5rem;
       font-weight: bold;
@@ -87,7 +87,6 @@
       border-bottom: 1px solid #333;
       padding-bottom: 2.5rem;
       transition: border-color 0.3s ease;
-      text-align: center; /* Centers titles and buttons */
     }
 
     .essay-link:hover .essay-preview {
@@ -99,6 +98,7 @@
       font-weight: bold;
       line-height: 1.3;
       margin-bottom: 0.4rem;
+      text-align: center; /* Keeps title centered */
     }
 
     .essay-author {
@@ -106,18 +106,23 @@
       color: #aaa;
       margin-bottom: 1.5rem;
       font-style: italic;
+      text-align: center; /* Keeps author centered */
     }
 
     .essay-abstract {
       font-size: 1.15rem;
       line-height: 1.6;
       color: #dddddd;
-      text-align: center; /* Centers the abstract paragraph */
+      text-align: justify; /* Justifies the abstract text block lines completely straight */
+    }
+
+    .action-links {
+      margin-top: 1rem;
+      text-align: left; /* Aligns the action links wrapper container to the left margin */
     }
 
     .read-more {
       display: inline-block;
-      margin-top: 1rem;
       font-size: 1rem;
       color: #888;
       text-decoration: underline;
@@ -148,7 +153,7 @@
         <div class="essay-abstract">
           <strong>Abstract:</strong> Moorean promises—statements such as "I promise to φ, but I do not know whether I will φ"—appear absurd. Beddor explains this absurdity by appealing to the Knowledge Norm of Promising. While his account captures the phenomenon, it does so at the cost of rendering many ordinary promises absurd as well, since we often lack knowledge of whether we will do what we promise. In this paper, I criticize this view and propose an alternative account of the absurdity of Moorean promises. I argue that promising itself brings about an epistemic improvement: once a promise is made, the promisor is in a better position to know that she will φ.
         </div>
-        <div style="margin-top: 1rem;">
+        <div class="action-links">
           <span class="read-more">Read Full Article</span>
           <span style="color: #555; margin: 0 0.5rem;">|</span>
           <span class="read-more" onclick="event.preventDefault(); window.open('Promising as an Epistemic Practice.pdf', '_blank');">Download PDF</span>
@@ -164,7 +169,7 @@
         <div class="essay-abstract">
           <strong>Abstract:</strong> In the actual world, we face the climate change crisis. Some argue that given the current situation, one's Sunday driving does not make any significant changes to GHGs. Therefore, one is permitted to go for a Sunday drive. However, others criticize this by claiming that Sunday driving would bring serious harm, calculating the real harm that emitting GHGs over one's whole life would bring.<sup>1</sup> In this paper, I want to consider the case from another aspect. Even if it makes insignificant changes to GHGs, is it permissible for one to go for a Sunday joyride? I think it is still a wrongdoing to choose to go for a Sunday joyride, even if it doesn't cause significant changes to GHGs.
         </div>
-        <div style="margin-top: 1rem;">
+        <div class="action-links">
           <span class="read-more">Read Full Article</span>
           <span style="color: #555; margin: 0 0.5rem;">|</span>
           <span class="read-more" onclick="event.preventDefault(); window.open('Can No-Difference Make a Moral Difference.pdf', '_blank');">Download PDF</span>
