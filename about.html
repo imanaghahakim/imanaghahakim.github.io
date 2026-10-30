@@ -69,11 +69,15 @@
       max-width: 950px;
       margin-top: 4rem;
       margin-bottom: 6rem;
+      align-items: flex-start;
     }
 
+    /* Left Column: Anchored sticky sidebar */
     .sidebar {
       flex: 1;
       max-width: 280px;
+      position: sticky;
+      top: 3rem;
     }
 
     h1 {
@@ -105,6 +109,31 @@
     
     .contact-info a:hover {
       text-decoration: underline;
+    }
+
+    /* Download CV Button */
+    .cv-btn-container {
+      margin-top: 1.8rem;
+    }
+
+    .cv-download-btn {
+      display: inline-block;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.05rem;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 0.55rem 1.1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .cv-download-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #ffffff;
+      color: #ffffff;
     }
 
     .main-flow {
@@ -164,6 +193,17 @@
       color: #ffffff;
     }
 
+    .paper-link {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s, opacity 0.2s;
+    }
+
+    .paper-link:hover {
+      color: #bbb;
+    }
+
     .item-institution {
       font-size: 1.1rem;
       color: #ccc;
@@ -197,6 +237,26 @@
       color: #777;
     }
 
+    .talks-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .talks-list li {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+      border-left: 2px solid #444;
+      padding-left: 0.8rem;
+    }
+
+    .talk-speaker {
+      color: #888;
+      font-style: italic;
+    }
+
     @media (max-width: 768px) {
       .about-grid {
         flex-direction: column;
@@ -204,6 +264,7 @@
       }
       .sidebar {
         max-width: 100%;
+        position: static;
       }
       .coursework-list {
         grid-template-columns: 1fr;
@@ -222,7 +283,7 @@
 
   <div class="about-grid">
     
-    <!-- LEFT PANEL: Identity & Contact -->
+    <!-- LEFT PANEL: Sticky Identity & Contact -->
     <div class="sidebar">
       <h1>Iman Aghahakim</h1>
       <div class="subtitle">Economics &amp; Philosophy<br>University of Tehran</div>
@@ -233,13 +294,18 @@
         <strong>Phone:</strong> +98 935 103 2528<br>
         <strong>Website:</strong> <a href="https://imanaghahakim.github.io">imanaghahakim.github.io</a>
       </div>
+
+      <!-- Download CV Button -->
+      <div class="cv-btn-container">
+        <a href="Iman_Aghahakim_CV.pdf" target="_blank" class="cv-download-btn">Download CV</a>
+      </div>
     </div>
 
-    <!-- RIGHT PANEL: CV Content -->
+    <!-- RIGHT PANEL: Full CV Content -->
     <div class="main-flow">
       
       <div class="bio-text">
-        I completed my Bachelor of Economics at the University of Tehran while pursuing extensive departmental coursework in Philosophy. My research interests center on Moral and Political Philosophy, Applied Ethics, and Philosophy of Action—specifically practical and theoretical reasoning, moral reasons, reasons and oughts, deliberation, and rationality.
+        I completed my Bachelor of Economics at the University of Tehran while pursuing extensive departmental coursework in Philosophy[cite: 16]. My research interests center on Moral and Political Philosophy, Applied Ethics, and Philosophy of Action—specifically practical and theoretical reasoning, moral reasons, reasons and oughts, deliberation, and rationality[cite: 16].
       </div>
 
       <h2>Education</h2>
@@ -248,14 +314,14 @@
           <div class="item-year">Sep 2021 — August 2026</div>
           <div class="item-title">Bachelor of Economics (Major)</div>
           <div class="item-institution">University of Tehran, Tehran, Iran</div>
-          <div class="item-details">GPA: 15.77/20. Relevant Coursework: Ethical Economics, Game Theory and Its Application, Economic Development, Public Sector 1&amp;2.</div>
+          <div class="item-details">GPA: 15.77/20[cite: 16]. Relevant Coursework: Ethical Economics, Game Theory and Its Application, Economic Development, Public Sector 1&amp;2[cite: 16].</div>
         </div>
         
         <div class="timeline-item">
           <div class="item-year">Undergraduate Minor Coursework</div>
           <div class="item-title">Minor Coursework in Philosophy</div>
           <div class="item-institution">University of Tehran</div>
-          <div class="item-details">Completed extensive departmental coursework alongside major degree. Relevant Courses: Philosophy of Ethics in Western Thought, Kant and German Idealism, Phenomenology and Existential Philosophy, Postmodern Philosophy, Philosophy of Arts.</div>
+          <div class="item-details">Completed extensive departmental coursework alongside major degree[cite: 16]. Relevant Courses: Philosophy of Ethics in Western Thought, Kant and German Idealism, Phenomenology and Existential Philosophy, Postmodern Philosophy, Philosophy of Arts[cite: 16].</div>
         </div>
       </div>
 
@@ -263,23 +329,27 @@
       <div class="timeline">
         <div class="timeline-item">
           <div class="item-year">Independent Research (Supervised by Prof. Amir Saemi)</div>
-          <div class="item-title">Promising as an Epistemic Practice</div>
+          <div class="item-title">
+            <a href="article.html" class="paper-link">Promising as an Epistemic Practice</a>
+          </div>
           <div class="item-institution">Institute for Research in Fundamental Sciences (IPM)</div>
-          <div class="item-details">Examines whether promising places the promisor in a better epistemic position to know that she will do what she promised, developing a potential objection to Bob Beddor's account of the knowledge norm of promising.</div>
+          <div class="item-details">Examines whether promising places the promisor in a better epistemic position to know that she will do what she promised, developing a potential objection to Bob Beddor's account of the knowledge norm of promising[cite: 16].</div>
         </div>
 
         <div class="timeline-item">
           <div class="item-year">Independent Research</div>
-          <div class="item-title">Can "No Difference" Make a Moral Difference?</div>
+          <div class="item-title">
+            <a href="article2.html" class="paper-link">Can "No Difference" Make a Moral Difference?</a>
+          </div>
           <div class="item-institution">Collective Wrongdoing &amp; Climate Ethics</div>
-          <div class="item-details">Examines the challenge posed by "no-difference" arguments regarding individual harm thresholds in greenhouse gas emissions, defending a contribution-based account of individual moral responsibility in collective harm cases.</div>
+          <div class="item-details">Examines the challenge posed by "no-difference" arguments regarding individual harm thresholds in greenhouse gas emissions, defending a contribution-based account of individual moral responsibility in collective harm cases[cite: 16].</div>
         </div>
 
         <div class="timeline-item">
           <div class="item-year">Philosophy Minor Projects</div>
           <div class="item-title">Essays on Berkeley's Thesis on Imagination</div>
           <div class="item-institution">University of Tehran</div>
-          <div class="item-details">Authored analytical essays exploring <em>Identity Based on Imagination</em> and <em>Abstraction upon Imagination</em>.</div>
+          <div class="item-details">Authored analytical essays exploring <em>Identity Based on Imagination</em> and <em>Abstraction upon Imagination</em>[cite: 16].</div>
         </div>
       </div>
 
@@ -289,42 +359,50 @@
           <div class="item-year">2 Years Active Engagement</div>
           <div class="item-title">Moral Philosophy Reading Group</div>
           <div class="item-institution">IPM — Led by Amir Saemi</div>
-          <div class="item-details">Regular seminar discussions focused on normative ethics, complicity, and accountability.</div>
+          <div class="item-details">Regular seminar discussions focused on normative ethics, complicity, and accountability[cite: 17].</div>
         </div>
 
         <div class="timeline-item">
           <div class="item-year">8 Months Active Engagement</div>
           <div class="item-title">Philosophy of Language Reading Group</div>
           <div class="item-institution">IPM — Led by Sajed Tayebi</div>
-          <div class="item-details">Critical seminar examining semantics, intentionality, and speech act theory.</div>
+          <div class="item-details">Critical seminar examining semantics, intentionality, and speech act theory[cite: 17].</div>
         </div>
       </div>
+
+      <h2>Selected Talks Attended (IPM)</h2>
+      <ul class="talks-list">
+        <li>&ldquo;Truthmakers for Grounding Truths&rdquo; &mdash; <span class="talk-speaker">Mohsen Zamani</span>[cite: 17]</li>
+        <li>&ldquo;Carl Schmitt and the Concept of the Political&rdquo; &mdash; <span class="talk-speaker">Arash Abazari</span>[cite: 17]</li>
+        <li>&ldquo;Does Woman Exist? Does Man Exist?&rdquo; &mdash; <span class="talk-speaker">Mohsen Zamani</span>[cite: 17]</li>
+        <li>&ldquo;Speech Act, Pornography, Free Speech&rdquo; &mdash; <span class="talk-speaker">Sajed Tayebi</span>[cite: 17]</li>
+      </ul>
 
       <h2>Advanced Coursework &amp; Workshops (IPM)</h2>
       <div class="coursework-list">
         <div class="course-item">
           <strong>Ethics &amp; Complicity</strong>
-          <span class="course-prof">Amir Saemi</span>
+          <span class="course-prof">Amir Saemi</span>[cite: 16]
         </div>
         <div class="course-item">
           <strong>Epistemology &amp; Doing Philosophy</strong>
-          <span class="course-prof">Mohsen Zamani</span>
+          <span class="course-prof">Mohsen Zamani</span>[cite: 16]
         </div>
         <div class="course-item">
           <strong>Analytic Philosophy &amp; Epistemology of Social Movements</strong>
-          <span class="course-prof">Sajed Tayebi</span>
+          <span class="course-prof">Sajed Tayebi</span>[cite: 16]
         </div>
         <div class="course-item">
           <strong>Metaphysics</strong>
-          <span class="course-prof">Mahmood Morvarid</span>
+          <span class="course-prof">Mahmood Morvarid</span>[cite: 16]
         </div>
         <div class="course-item">
           <strong>Ethics of Artificial Intelligence</strong>
-          <span class="course-prof">Hadi Safaei</span>
+          <span class="course-prof">Hadi Safaei</span>[cite: 16]
         </div>
         <div class="course-item">
           <strong>Zeteic Epistemology Workshop</strong>
-          <span class="course-prof">Current State and Future Prospects</span>
+          <span class="course-prof">Current State and Future Prospects</span>[cite: 16]
         </div>
       </div>
 
@@ -332,15 +410,15 @@
       <div class="timeline" style="margin-top: 1rem;">
         <div class="timeline-item" style="margin-bottom: 1rem;">
           <div class="item-year">2025</div>
-          <div class="item-title" style="font-size: 1.1rem;">Knowledge and Practical Considerations</div>
+          <div class="item-title" style="font-size: 1.1rem;">Knowledge and Practical Considerations</div>[cite: 16]
         </div>
         <div class="timeline-item" style="margin-bottom: 1rem;">
           <div class="item-year">2024</div>
-          <div class="item-title" style="font-size: 1.1rem;">Topics in Social Epistemology</div>
+          <div class="item-title" style="font-size: 1.1rem;">Topics in Social Epistemology</div>[cite: 16]
         </div>
         <div class="timeline-item" style="margin-bottom: 1rem;">
           <div class="item-year">2023</div>
-          <div class="item-title" style="font-size: 1.1rem;">Paul Grice: Meaning, Intention and Perception</div>
+          <div class="item-title" style="font-size: 1.1rem;">Paul Grice: Meaning, Intention and Perception</div>[cite: 16]
         </div>
       </div>
 
