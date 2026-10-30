@@ -19,6 +19,7 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      position: relative;
     }
 
     body::before {
@@ -28,11 +29,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.45);
-      z-index: -1;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+      pointer-events: none;
     }
 
     .nav-container {
+      position: relative;
+      z-index: 2;
       width: 85%;
       max-width: 950px;
       margin-top: 3rem;
@@ -42,6 +46,7 @@
     }
 
     .nav-link {
+      font-family: 'Times New Roman', Times, serif;
       font-size: 1.3rem; 
       color: #aaa;
       cursor: pointer;
@@ -56,6 +61,8 @@
     }
 
     .about-grid {
+      position: relative;
+      z-index: 2;
       display: flex;
       gap: 4rem;
       width: 85%;
@@ -206,6 +213,46 @@
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <div class="nav-container">
     <a href="index.html" class="nav-link">Home</a>
     <a href="en.html" class="nav-link">Thoughts</a>
+    <a href="about.html" class="nav-link active">About Me</a>
+  </div>
+
+  <div class="about-grid">
+    
+    <!-- LEFT PANEL: Identity & Contact -->
+    <div class="sidebar">
+      <h1>Iman Aghahakim</h1>
+      <div class="subtitle">Economics &amp; Philosophy<br>University of Tehran</div>
+      
+      <div class="contact-info">
+        <strong>Location:</strong> Tehran, Iran<br>
+        <strong>Email:</strong> <a href="mailto:iman.aghahakim02@gmail.com">iman.aghahakim02@gmail.com</a><br>
+        <strong>Phone:</strong> +98 935 103 2528<br>
+        <strong>Website:</strong> <a href="https://imanaghahakim.github.io">imanaghahakim.github.io</a>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: CV Content -->
+    <div class="main-flow">
+      
+      <div class="bio-text">
+        I completed my Bachelor of Economics at the University of Tehran while pursuing extensive departmental coursework in Philosophy. My research interests center on Moral and Political Philosophy, Applied Ethics, and Philosophy of Action—specifically practical and theoretical reasoning, moral reasons, reasons and oughts, deliberation, and rationality.
+      </div>
+
+      <h2>Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-year">Sep 2021 — August 2026</div>
+          <div class="item-title">Bachelor of Economics (Major)</div>
+          <div class="item-institution">University of Tehran, Tehran, Iran</div>
+          <div class="item-details">GPA: 15.77/20. Relevant Coursework: Ethical Economics, Game Theory and Its Application, Economic Development, Public Sector 1&amp;2.</div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="item-year">Undergraduate Minor Coursework</div>
+          <div class="item-title">Minor Coursework in Philosophy</div>
+          <div class="item-institution">University of Tehran</div>
+          <div class="item-details
