@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruminations | Iman Aghahakim</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('ooo-1160x773.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #ffffff;
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .nav-container {
+      position: relative;
+      z-index: 2;
+      width: 85%;
+      max-width: 750px;
+      margin-top: 3rem;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-start;
+    }
+
+    .nav-link {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1.3rem;
+      color: #aaa;
+      cursor: pointer;
+      text-decoration: none;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    header {
+      position: relative;
+      z-index: 2;
+      width: 85%;
+      max-width: 750px;
+      margin-top: 3.5rem;
+      text-align: left;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0 0 0.4rem 0;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      font-style: italic;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .entries-container {
+      position: relative;
+      z-index: 2;
+      width: 85%;
+      max-width: 750px;
+      margin-top: 3.5rem;
+      margin-bottom: 6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .entry {
+      border-bottom: 1px solid #3a3a3a;
+      padding-bottom: 2.5rem;
+    }
+
+    .entry:last-child {
+      border-bottom: none;
+    }
+
+    .entry-date {
+      font-size: 0.95rem;
+      color: #888;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+    }
+
+    .entry-title {
+      font-size: 1.65rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .entry-title:hover {
+      text-decoration: underline;
+      color: #ddd;
+    }
+
+    .entry-summary {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: #ccc;
+      text-align: justify;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 0.8rem;
+      font-size: 1rem;
+      color: #aaa;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+
+    .entry:hover .read-more {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="en.html" class="nav-link">Thoughts</a>
+    <a href="ruminations.html" class="nav-link active">Ruminations</a>
+    <a href="about.html" class="nav-link">About Me</a>
+  </div>
+
+  <header>
+    <h1>Ruminations</h1>
+    <p>Informal essays, second thoughts, and observations on books, life, and culture.</p>
+  </header>
+
+  <main class="entries-container">
+    
+    <!-- First Post Entry -->
+    <article class="entry">
+      <div class="entry-date">October 2026</div>
+      <a href="first-rumination.html" class="entry-title">On Reading Slowly in an Accelerated Culture</a>
+      <div class="entry-summary">
+        A reflection on why digesting complex thoughts requires an entirely different posture toward quiet and patience than the rest of our digital routines seem to tolerate.
+      </div>
+      <a href="first-rumination.html" class="read-more">Read piece &rarr;</a>
+    </article>
+
+  </main>
+
+</body>
+</html>
